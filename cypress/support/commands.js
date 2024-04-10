@@ -23,10 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+/// <reference types="cypress" />
 
-Cypress.Commands.add('signUp', (homePage, email, password) => { 
+Cypress.Commands.add('signUp',  (homePage, email, password) => { 
     var signUpPage = homePage.openSignUpPage()
     signUpPage.fillEmail(email)
     signUpPage.fillPassword(password)
     signUpPage.registerUser()
+    return cy.wrap(signUpPage)
 })
