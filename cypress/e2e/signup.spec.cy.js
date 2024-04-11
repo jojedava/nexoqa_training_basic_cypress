@@ -15,7 +15,7 @@ describe('Test suite sign up', () => {
 
     })
 
-    it('Register wrong email', () => {
+    it.only('Register wrong email', () => {
         cy.visit('http://ec2-52-49-67-237.eu-west-1.compute.amazonaws.com/')
         var homePage = new HomePage()
         cy.signUp(homePage, 'test', '12345678')

@@ -1,7 +1,12 @@
 import HomePage from "./pages/home_page"
 
 describe('Test suite login', () => {
-    it('passes', () => {
+    
+    beforeEach(() => {
+        cy.request('http://ec2-52-49-67-237.eu-west-1.compute.amazonaws.com:8081/reset')
+    })
+
+    it('Login a user', () => {
         cy.visit('http://ec2-52-49-67-237.eu-west-1.compute.amazonaws.com/')
         var email = 'test@test.com'
         var password = '12345678'
@@ -16,6 +21,5 @@ describe('Test suite login', () => {
         loginPage.fillPassword(password)
         loginPage.doLogin();
         homePage.getLogoutBtn().should('exist')
-
     })
 })
