@@ -33,6 +33,14 @@ class HomePage {
         this.#input_search.type(search);
         cy.wait(1000);
     }
+
+    getRecentlyNextPage(){
+        return cy.get("div.mt-2  button[aria-label='Next page']")
+    }
+
+    getRecentlyPreviousPage(){
+        return cy.get("div.mt-2  button[aria-label='Previous page']")
+    }
 }
 
 export default HomePage;
