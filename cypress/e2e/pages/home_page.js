@@ -31,6 +31,7 @@ class HomePage {
         this.#input_search.clear();
         this.#input_search.focus();
         this.#input_search.type(search);
+        cy.wait(1000);
     }
 }
 
