@@ -6,5 +6,6 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     "watchForFileChanges": false,
+    "baseUrl": "http://ec2-52-49-67-237.eu-west-1.compute.amazonaws.com"
   },
 });

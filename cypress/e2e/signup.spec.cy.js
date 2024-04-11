@@ -8,7 +8,7 @@ describe('Test suite sign up', () => {
     })
     
     it('Register new user', () => {
-        cy.visit('http://ec2-52-49-67-237.eu-west-1.compute.amazonaws.com/')
+        cy.visit('/')
         var homePage = new HomePage()
         cy.signUp(homePage, 'test@test.com', '12345678')
         homePage.getLogoutBtn().should('exist')
@@ -16,7 +16,7 @@ describe('Test suite sign up', () => {
     })
 
     it.only('Register wrong email', () => {
-        cy.visit('http://ec2-52-49-67-237.eu-west-1.compute.amazonaws.com/')
+        cy.visit('/')
         var homePage = new HomePage()
         cy.signUp(homePage, 'test', '12345678')
         var signUpPage = new SignUpPage()
@@ -24,7 +24,7 @@ describe('Test suite sign up', () => {
     })
 
     it('Register wrong password with special characters', () => {
-        cy.visit('http://ec2-52-49-67-237.eu-west-1.compute.amazonaws.com/')
+        cy.visit('/')
         var homePage = new HomePage()
         cy.signUp(homePage, 'test@test.com', '$12345678')
         var signUpPage = new SignUpPage()
@@ -32,7 +32,7 @@ describe('Test suite sign up', () => {
     })
 
     it('Register wrong password with less than 8 characters', () => {
-        cy.visit('http://ec2-52-49-67-237.eu-west-1.compute.amazonaws.com/')
+        cy.visit('/')
         var homePage = new HomePage()
         cy.signUp(homePage, 'test@test.com', '1234567')
         var signUpPage = new SignUpPage()
@@ -40,7 +40,7 @@ describe('Test suite sign up', () => {
     })
 
     it('Register wrong password with greater than 32 characters', () => {
-        cy.visit('http://ec2-52-49-67-237.eu-west-1.compute.amazonaws.com/')
+        cy.visit('/')
         var homePage = new HomePage()
         cy.signUp(homePage, 'test@test.com', '1234567ABCDEFGHIJKLMAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
         var signUpPage = new SignUpPage()

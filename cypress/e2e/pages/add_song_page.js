@@ -10,7 +10,7 @@ class AddSong{
     }
     fill_text_inputs(text,numero){
         // this.#inputs.each((el, index, list) => {
-        //     cy.wrap(list).should('have.length',7)
+        //     cy.wrap(list).should('have.length',6)
         //     cy.wrap(el).clear()
         //     cy.wrap(el).focus()
         //     cy.wrap(el).type(text)

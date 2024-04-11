@@ -7,7 +7,7 @@ describe('Test suite login', () => {
     })
 
     it('Login a user', () => {
-        cy.visit('http://ec2-52-49-67-237.eu-west-1.compute.amazonaws.com/')
+        cy.visit('/')
         var email = 'test@test.com'
         var password = '12345678'
 
@@ -24,9 +24,7 @@ describe('Test suite login', () => {
     })
 
     it("Login with invalid credentials", () => {
-        cy.visit(
-          "http://ec2-34-249-209-43.eu-west-1.compute.amazonaws.com/#/songs"
-        );
+        cy.visit("/");
         var homePage = new HomePage();
     
         var loginPage = homePage.openLoginPage();
