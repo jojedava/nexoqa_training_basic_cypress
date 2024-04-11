@@ -22,4 +22,15 @@ describe('Test suite login', () => {
         loginPage.doLogin();
         homePage.getLogoutBtn().should('exist')
     })
+
+    it("Login with invalid credentials", () => {
+        cy.visit(
+          "http://ec2-34-249-209-43.eu-west-1.compute.amazonaws.com/#/songs"
+        );
+        var homePage = new HomePage();
+    
+        var loginPage = homePage.openLoginPage();
+        loginPage.loginUser();
+        loginPage.getErrorMessage().contains("The login information was incorrect").should("exist");
+      });
 })
