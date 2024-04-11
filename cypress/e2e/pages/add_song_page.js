@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 class AddSong{
     #inputs=[]
     #btn_create_song=""
@@ -7,6 +9,21 @@ class AddSong{
 
     }
     fill_text_inputs(text,numero){
+        // this.#inputs.each((el, index, list) => {
+        //     cy.wrap(list).should('have.length',7)
+        //     cy.wrap(el).clear()
+        //     cy.wrap(el).focus()
+        //     cy.wrap(el).type(text)
+        //     cy.log(index)
+        // })
+
+        // cy.get('input[type=text]').each((el) => {
+        //     cy.wrap(el).clear()
+        //     cy.wrap(el).focus()
+        //     cy.wrap(el).type(text)
+        // })
+
+
         for (var n=0; n<numero;n++ ){
 
             cy.get('input[type=text]').eq(n).clear()
